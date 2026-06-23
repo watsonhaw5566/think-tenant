@@ -1,0 +1,53 @@
+{
+  "name": "watsonhaw/think-tenant",
+  "description": "ThinkPHP 8 Multi-Tenant & Permission Management Extension Package",
+  "type": "library",
+  "license": "Apache-2.0",
+  "keywords": [
+    "thinkphp",
+    "thinkphp8",
+    "tenant",
+    "multi-tenant",
+    "permission",
+    "rbac",
+    "auth"
+  ],
+  "require": {
+    "php": ">=8.0.0",
+    "topthink/framework": "^8.0",
+    "topthink/think-orm": "^3.0",
+    "watsonhaw/think-satoken": "^1.0"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^10.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "think\\tenant\\": "src/"
+    },
+    "files": [
+      "src/helper.php"
+    ]
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "think\\tenant\\tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "think": {
+      "services": [
+        "think\\tenant\\TenantService"
+      ],
+      "config": {
+        "tenant": "src/config/tenant.php"
+      }
+    }
+  },
+  "scripts": {
+    "test": "phpunit"
+  },
+  "config": {
+    "preferred-install": "dist"
+  }
+}
